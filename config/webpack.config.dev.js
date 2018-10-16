@@ -151,6 +151,27 @@ module.exports = {
               cacheDirectory: true,
             },
           },
+          // 处理sass
+          {
+            test: /\.(scss|sass)$/,
+            use: [{
+              loader: 'style-loader', // inject CSS to page
+            }, {
+              loader: 'css-loader', // translates CSS into CommonJS modules
+            }, {
+              loader: 'postcss-loader', // Run post css actions
+              options: {
+                plugins: function () { // post css plugins, can be exported to postcss.config.js
+                  return [
+                    require('precss'),
+                    require('autoprefixer')
+                  ];
+                }
+              }
+            }, {
+              loader: 'sass-loader' // compiles Sass to CSS
+            }]
+          },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
           // "style" loader turns CSS into JS modules that inject <style> tags.

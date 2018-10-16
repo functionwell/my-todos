@@ -1,0 +1,39 @@
+$height: 30px;
+$icon-color:#b2b2b2;
+
+.m-search-wrap {
+    padding: 8px 10px 9px;
+
+    .m-search {
+        height: $height + 2;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        background: #fff;
+        position: relative;
+
+        &:focus-within {
+            outline: 0;
+            box-shadow: 0 0 0 .2rem rgba(0, 123, 255, 0.5);
+        }
+
+        .icon-search {
+            padding: 0 10px;
+            color:$icon-color;
+        }
+
+        input {
+            border: 0;
+            outline: 0;
+            height: $height;
+            width: 70%;
+        }
+
+        .icon-clear {
+            position: absolute;
+            top:0;
+            right: 10px;
+            line-height: $height;
+            color:$icon-color;
+        }
+    }
+}
