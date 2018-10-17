@@ -35,7 +35,8 @@
         &.active {
             background: #ebebeb;
         }
-        &:hover{
+
+        &:hover {
             background: #f3f3f3;
         }
 
@@ -132,8 +133,13 @@
 
 /*右侧内容*/
 .app-cont {
-    flex: 1;
+    width: calc(100% - 260px);
     height: 100vh;
+    position: relative;
+    main{
+        height:calc(100vh - 130px);
+        overflow-y: auto;
+    }
 }
 
 .cont-header {
@@ -146,18 +152,110 @@
 }
 
 .cont-footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
+    background: #fff;
     width: 100%;
-    text-align: center;
+    padding-left: calc(50% - 28px);
+    height: 80px;
+    line-height: 80px;
 }
 
-.title {
-    flex: 1;
-    padding: 0 40px;
-    white-space: nowrap;
-}
+// .title {
+//     flex: 1;
+//     padding: 0 40px;
+//     white-space: nowrap;
+// }
 
 .cont-todo {
     display: flex;
+}
+
+.app-cont .app-header {
+    display: flex;
+    align-items: center;
+    background: #fff;
+
+    .header-btn {
+        padding: 0 15px;
+    }
+
+    .title {
+        flex: 1;
+        text-align: center;
+        white-space: normal;
+        text-overflow: ellipsis;
+    }
+
+    .h5 {
+        margin-bottom: 0;
+    }
+
+    .btn {
+        width: 48px;
+    }
+
+    i {
+        color: #737373;
+    }
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 2px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+    // @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+    // @include transition($btn-transition);
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(0, 123, 255, 0.5);
+    }
+
+    &:active {
+        background: #ededed;
+    }
+
+    &.btn-round {
+        width: 34px;
+        height:34px;
+        padding: 0;
+        line-height: 32px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 14px;
+    }
+    &.btn-large{
+        width: 56px;
+        height:56px;
+        line-height: 54px;
+        font-size: 28px;
+    }
+
+}
+
+.cont-footer .icon-edit{
+    color:#737373;
+}
+
+.cont-footer .btn-microphone{
+    background: rgba(90,134,246,1);
+    border-color:rgba(90,134,246,1);
+    color:#fff;
+    margin-right: 20px;
+    box-shadow:1px 3px 5px rgba(0,0,0,0.5);
+
+    &:active{
+        box-shadow:1px 2px 3px rgba(0,0,0,0.5);
+    }
+
 }

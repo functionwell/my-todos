@@ -89,7 +89,7 @@ class App extends Component {
               <li>
                 <div className="menu-item">
                   <i className="menu-icon">
-                    <FontAwesomeIcon icon="calendar-check" />
+                    <FontAwesomeIcon icon="calendar-alt" />
                   </i>
                   <span className="item-title">已计划</span>
                   <span className="nums">3</span>
@@ -122,37 +122,49 @@ class App extends Component {
           </div>
         </div>
         <div className="app-cont">
-        <div className="app-header"></div>
-          <header className="cont-header">
-            <div>
-              <button type="button" title="同步" className="btn btn-outline-primary">
-                <FontAwesomeIcon icon="sync" />
+          <div className="app-header">
+            <div className="header-btn">
+              <button type="button" title="同步" className="btn btn-outline">
+                <i className="icon-sync">
+                  <FontAwesomeIcon icon="sync" />
+                </i>
               </button>
             </div>
-            <div className="title"><h2>全部胶囊</h2></div>
-            <div>
-              <button type="button" title="展开/收起所有胶囊" className="btn btn-outline-dark">
-                <FontAwesomeIcon icon="arrows-alt-v" />
+            <div className="title"><h1 className="h5 text-muted">全部胶囊</h1></div>
+            <div className="header-btn">
+              <button type="button" title="展开/收起所有胶囊" className="btn btn-outline">
+                <i className="icon-arrows-alt-v">
+                  <FontAwesomeIcon icon="arrows-alt-v" />
+                </i>
               </button>
             </div>
-          </header>
+          </div>
 
           <main>
             <div className="list-wrap">
-              <ul>
-                <li className="cont-todo">
-                  <input type="checkbox" />
-                  <div>这是我的第一条代办事项</div>
-                </li>
+              <ul className="list-unstyled">
                 <li>
                   <Todo isExpand={false} content="Todo component test" attachment={['qwe']}
-                    remindSettings={null} />
+                    remindSettings={{}} />
+                </li>
+                <li>
+                  <Todo isExpand={true} content="撒打发斯蒂芬" attachment={['qwe']}
+                    remindSettings={{}} />
                 </li>
               </ul>
             </div>
           </main>
           <footer className="cont-footer">
-            <button>新建胶囊</button>
+            <button type="button" className="btn btn-round btn-large btn-microphone">
+                <i className="icon icon-microphone">
+                  <FontAwesomeIcon icon="microphone" />
+                </i>
+            </button>
+            <button type="button" className="btn btn-round">
+                <i className="icon icon-edit">
+                  <FontAwesomeIcon icon="edit" />
+                </i>
+            </button>
           </footer>
         </div>
       </div>
