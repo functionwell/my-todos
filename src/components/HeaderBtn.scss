@@ -1,0 +1,19 @@
+@import '../scss/btn';
+
+.header-btn {
+    margin-left: 15px;
+
+    &:last-of-type {
+        margin-right: 15px;
+    }
+
+    @include btn($padding-x, $padding-y, $font-size, $line-height, $border-radius);
+
+    .btn {
+        width: 48px;
+    }
+
+    i {
+        color: #737373;
+    }
+}

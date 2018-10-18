@@ -1,0 +1,32 @@
+@import '../scss/btn';
+
+@include btn($padding-x, $padding-y, $font-size, $line-height, $border-radius);
+
+.cont-footer {
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    width: 100%;
+    padding-left: calc(50% - 28px);
+    height: 80px;
+    line-height: 80px;
+
+
+    .icon-edit {
+        color: #737373;
+    }
+
+    .btn-microphone {
+        background: rgba(90, 134, 246, 1);
+        border-color: rgba(90, 134, 246, 1);
+        color: #fff;
+        margin-right: 20px;
+        box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+
+        &:active {
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+        }
+
+    }
+
+}

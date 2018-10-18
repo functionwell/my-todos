@@ -8,7 +8,7 @@ export default class MenuItem extends Component {
     render() {
         return (
             <div className="menu-item">
-                <MenuIcon type={this.props.type} icon={this.props.type} bordered={menuItemTypes.find(item => item.type === this.props.type).bordered} />
+                <MenuIcon type={this.props.type} />
                 <span className="name">{this.props.name}</span>
                 <span className="count">{this.props.count}</span>
             </div>

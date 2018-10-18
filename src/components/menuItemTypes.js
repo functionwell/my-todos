@@ -24,7 +24,7 @@ const menuItemTypes = [{
     bordered: true,
 }, {
     type: 'share',
-    icon: 'half',
+    icon: null,
     bordered: true,
 }, {
     type: 'scheduled',

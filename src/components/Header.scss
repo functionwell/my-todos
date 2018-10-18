@@ -1,0 +1,24 @@
+$leftBtnNums:1;
+$rightBtnNums:2;
+$btnGutter:63px;
+
+.header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    position: relative;
+
+    .title {
+        flex: 1;
+        font-size: 1.25rem;
+        margin-left: 15px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: ($rightBtnNums - 1)*$btnGutter;
+        padding-right: ($leftBtnNums - 1)*$btnGutter;
+    }
+
+}

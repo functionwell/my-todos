@@ -1,129 +1,21 @@
 import React, { Component } from 'react'
 import './App.scss'
 import Menu from './components/Menu'
-import RightCont from './components/RightCont'
+import Main from './components/Main'
 
 // import HeaderSearch from './components/HeaderSearch'
 // import Todo from './components/Todo'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <div className="app-menu border-right bg-white">
-          <Menu></Menu>
-          {/* <div className="app-header border-bottom">
-            <HeaderSearch placeholder="搜索全部胶囊"></HeaderSearch>
-          </div>
-          <div className="menu-list-wrap">
-            <div className="menu-list">
-              <h3 className="list-title">胶囊列表</h3>
-              <ul className="list-unstyled">
-                <li>
-                  <div className="menu-item">
-                    <i className="menu-icon icon-folder">
-                      <FontAwesomeIcon icon="folder" />
-                    </i>
-                    <span className="item-title">全部胶囊</span>
-                    <span className="nums">7</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="menu-item">
-                    <i className="menu-icon icon-clipboard">
-                      <FontAwesomeIcon icon="clipboard-list" />
-                    </i>
-                    <span className="item-title">记事</span>
-                    <span className="nums">17</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="menu-item">
-                    <i className="menu-icon icon-exclamation">
-                      <FontAwesomeIcon icon="exclamation" />
-                    </i>
-                    <span className="item-title">重要事项</span>
-                    <span className="nums">27</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="menu-item active">
-                    <i className="menu-icon icon-star">
-                      <FontAwesomeIcon icon="star" />
-                    </i>
-                    <span className="item-title">今日待办</span>
-                    <span className="nums">37</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="menu-item">
-                    <i className="menu-icon icon-comment">
-                      <FontAwesomeIcon icon="comment" />
-                    </i>
-                    <span className="item-title">待发送消息</span>
-                    <span className="nums">47</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="menu-item">
-                    <i className="menu-icon icon-lightbulb">
-                      <FontAwesomeIcon icon="lightbulb" />
-                    </i>
-                    <span className="item-title">灵感</span>
-                    <span className="nums">57</span>
-                  </div>
-                </li>
-                <li>
-                  <div className="menu-item">
-                    <i className="menu-icon icon-half"></i>
-                    <span className="item-title">共享胶囊</span>
-                    <span className="nums">67</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="menu-list list-other">
-            <h3 className="list-title">计划完成的胶囊</h3>
-            <ul className="list-unstyled">
-              <li>
-                <div className="menu-item">
-                  <i className="menu-icon">
-                    <FontAwesomeIcon icon="calendar-alt" />
-                  </i>
-                  <span className="item-title">已计划</span>
-                  <span className="nums">3</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div className="menu-list list-other">
-            <h3 className="list-title">处理完毕的胶囊</h3>
-            <ul className="list-unstyled">
-              <li>
-                <div className="menu-item">
-                  <i className="menu-icon">
-                    <FontAwesomeIcon icon="check" />
-                  </i>
-                  <span className="item-title">已完成</span>
-                  <span className="nums">0</span>
-                </div>
-              </li>
-              <li>
-                <div className="menu-item">
-                  <i className="menu-icon">
-                    <FontAwesomeIcon icon="trash-alt" />
-                  </i>
-                  <span className="item-title">回收站</span>
-                  <span className="nums">3</span>
-                </div>
-              </li>
-            </ul>
-          </div> */}
-        </div>
-        <div className="app-cont">
-          <RightCont></RightCont>
+    render() {
+        return (
+          <div className="app">
+              <div className="app-menu border-right bg-white">
+                  <Menu/>
+              </div>
+            <div className="app-cont">
+                <Main/>
           {/* <div className="app-header">
             <div className="header-btn">
               <button type="button" title="同步" className="btn btn-outline">

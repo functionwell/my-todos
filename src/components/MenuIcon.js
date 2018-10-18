@@ -12,7 +12,7 @@ export default class MenuIcon extends Component {
         return (
             <React.Fragment>
                 <i className={classNames({ 'menu-icon': true, [`icon-${item.type}`]: true, 'icon-bordered': item.bordered })}>
-                    <FontAwesomeIcon icon={item.icon} />
+                    {item.icon ? <FontAwesomeIcon icon={item.icon} /> : null}
                 </i>
             </React.Fragment>
         )
@@ -20,6 +20,5 @@ export default class MenuIcon extends Component {
 }
 
 MenuIcon.propTypes = {
-    icon: PropTypes.oneOf(menuItemTypes.map(item => item.icon)).isRequired,
-    bordered: PropTypes.bool.isRequired,
+    type: PropTypes.oneOf(menuItemTypes.map(item => item.type)).isRequired,
 }
