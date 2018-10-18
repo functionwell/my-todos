@@ -1,10 +1,11 @@
 $height: 30px;
 $icon-color:#b2b2b2;
 
-.m-search-wrap {
+.search-wrap {
+    background: #f5f5f5;
     padding: 8px 10px 9px;
 
-    .m-search {
+    .search {
         height: $height + 2;
         border: 1px solid #ddd;
         border-radius: 15px;
@@ -18,7 +19,7 @@ $icon-color:#b2b2b2;
 
         .icon-search {
             padding: 0 10px;
-            color:$icon-color;
+            color: $icon-color;
         }
 
         input {
@@ -30,10 +31,10 @@ $icon-color:#b2b2b2;
 
         .icon-clear {
             position: absolute;
-            top:0;
+            top: 0;
             right: 10px;
             line-height: $height;
-            color:$icon-color;
+            color: $icon-color;
         }
     }
 }

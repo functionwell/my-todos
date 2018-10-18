@@ -1,0 +1,70 @@
+.menu-icon {
+    color: #ccc;
+    font-size: 1.2em;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 19px;
+    margin-right: 9px;
+    position: relative;
+    top: 2px;
+
+    &.icon-bordered {
+
+        font-size: 12px;
+        color: #fff;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            top: -4px;
+            left: -4px;
+        }
+    }
+
+    &.icon-all {
+        background: linear-gradient(rgba(141, 152, 179, 1), rgba(64, 75, 109, 1));
+    }
+
+    &.icon-note {
+        background: linear-gradient(rgba(138, 174, 255, 1), rgba(76, 120, 255, 1));
+    }
+
+    &.icon-important {
+        background: linear-gradient(rgba(240, 100, 89, 1), rgba(226, 45, 37, 1));
+    }
+
+    &.icon-today {
+        background: linear-gradient(rgba(255, 190, 85, 1), rgba(255, 130, 0, 1));
+    }
+
+    &.icon-message {
+        background: linear-gradient(rgba(133, 220, 118, 1), rgba(57, 176, 42, 1));
+    }
+
+    &.icon-inspire {
+        background: linear-gradient(rgba(182, 129, 225, 1), rgba(124, 60, 196, 1));
+    }
+
+    &.icon-share {
+        background: linear-gradient(rgba(166, 196, 255, 1), rgba(98, 136, 255, 1));
+
+        &::after {
+            content: '';
+            position: absolute;
+            border: 9px solid #fff;
+            border-radius: 50%;
+            right: 1px;
+            top: 1px;
+            border-left-color: transparent;
+            border-top-color: transparent;
+            transform: rotateZ(-45deg);
+        }
+    }
+}

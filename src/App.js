@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import './App.scss'
-import Search from './components/Search'
-import Todo from './components/Todo'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Menu from './components/Menu'
+import RightCont from './components/RightCont'
+
+// import HeaderSearch from './components/HeaderSearch'
+// import Todo from './components/Todo'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="app-menu border-right">
-          <div className="app-header border-bottom">
-            <Search placeholder="搜索全部胶囊"></Search>
+        <div className="app-menu border-right bg-white">
+          <Menu></Menu>
+          {/* <div className="app-header border-bottom">
+            <HeaderSearch placeholder="搜索全部胶囊"></HeaderSearch>
           </div>
           <div className="menu-list-wrap">
             <div className="menu-list">
@@ -72,9 +76,6 @@ class App extends Component {
                 </li>
                 <li>
                   <div className="menu-item">
-                    {/* <i className="menu-icon icon-star-half-alt">
-                      <FontAwesomeIcon icon="star-half-alt" />
-                    </i> */}
                     <i className="menu-icon icon-half"></i>
                     <span className="item-title">共享胶囊</span>
                     <span className="nums">67</span>
@@ -119,10 +120,11 @@ class App extends Component {
                 </div>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
         <div className="app-cont">
-          <div className="app-header">
+          <RightCont></RightCont>
+          {/* <div className="app-header">
             <div className="header-btn">
               <button type="button" title="同步" className="btn btn-outline">
                 <i className="icon-sync">
@@ -165,7 +167,7 @@ class App extends Component {
                   <FontAwesomeIcon icon="edit" />
                 </i>
             </button>
-          </footer>
+          </footer> */}
         </div>
       </div>
     );

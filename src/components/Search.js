@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import './Search.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default class Search extends Component {
+export default class HeaderSearch extends Component {
     render() {
         return (
-            <div className="m-search-wrap">
-                <div className="m-search">
+            <div className="search-wrap">
+                <div className="search">
                     <i className="icon-search">
-                        <FontAwesomeIcon className="icon" icon="search" />
+                        <FontAwesomeIcon icon="search" />
                     </i>
                     <input type="text" placeholder={this.props.placeholder} />
-                    <i  className="icon-clear">
+                    <i className="icon-clear">
                         <FontAwesomeIcon icon="times-circle" />
                     </i>
                 </div>

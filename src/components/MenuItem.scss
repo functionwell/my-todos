@@ -1,0 +1,22 @@
+.menu-item {
+    padding: 15px 10px 15px 24px;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+
+    &.active {
+        background: #ebebeb;
+    }
+
+    &:hover {
+        background: #f3f3f3;
+    }
+
+    .name {
+        flex: 1;
+    }
+
+    .count {
+        color: #ccc;
+    }
+}
