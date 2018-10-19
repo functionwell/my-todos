@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import './App.scss'
 import Menu from './components/Menu'
 import Main from './components/Main'
@@ -10,13 +10,13 @@ import Main from './components/Main'
 class App extends Component {
     render() {
         return (
-          <div className="app">
-              <div className="app-menu border-right bg-white">
-                  <Menu/>
-              </div>
-            <div className="app-cont">
-                <Main/>
-          {/* <div className="app-header">
+            <div className="app">
+                <div className="app-menu border-right bg-white">
+                    <Menu/>
+                </div>
+                <div className="app-cont">
+                    <Main/>
+                    {/* <div className="app-header">
             <div className="header-btn">
               <button type="button" title="同步" className="btn btn-outline">
                 <i className="icon-sync">
@@ -60,10 +60,10 @@ class App extends Component {
                 </i>
             </button>
           </footer> */}
-        </div>
-      </div>
-    );
-  }
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;
