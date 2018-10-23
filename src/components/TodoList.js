@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 // import PropTypes from 'prop-types'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './TodoList.scss'
@@ -10,8 +10,10 @@ export default class TodoList extends Component {
     render() {
         return (
             <div className='todo-list'>
-                {this.props.todos.map((item,index) => 
-                    <Todo key={index} {...item} />
+                {this.props.todos.map((item, index) =>
+                    <Todo key={index} {...item} shrinkTodo={this.props.shrinkTodo}
+                          expandTodo={this.props.expandTodo}
+                          activeTodo={this.props.activeTodo}/>
                 )}
             </div>
         )

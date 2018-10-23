@@ -1,4 +1,5 @@
 .todo-list {
-    height: calc(100vh - 130px);
+    height: calc(100% - 130px);
+    //min-height: calc(100% - 130px);
     overflow-y: auto;
 }

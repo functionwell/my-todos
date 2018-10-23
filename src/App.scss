@@ -1,6 +1,6 @@
 .app {
     display: flex;
-    /*align-items: stretch;*/
+    align-items: stretch;
     min-width: 1050px;
 
     .app-menu {
@@ -11,5 +11,10 @@
         width: calc(100% - 260px);
         height: 100vh;
         position: relative;
+    }
+    @media screen and (max-height: 828px) {
+        .app-cont {
+            height: 828px;
+        }
     }
 }

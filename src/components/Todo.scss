@@ -1,72 +1,185 @@
 .todo-wrap {
     margin: 15px;
 }
-
 .todo {
+    transition: height .4s ease;
     display: flex;
-    align-items: center;
-    border: 1px solid rgba(85,121,226,1);
     border-radius: 28px;
-    color:#fff;
-    height: 56px;
-    line-height: 56px;
-    background: linear-gradient(rgba(105, 140, 231, 1), rgba(117, 153, 235, 1));
+    color: #fff;
     position: relative;
     user-select: none;
+
+    &.todo-shrink {
+        align-items: center;
+        height: 56px;
+        line-height: 56px;
+        .todo-content {
+            margin-right: 20px;
+            overflow: hidden;
+            .content {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+        .right-icon {
+            margin-right: 20px;
+        }
+        .icon-paperclip {
+            color: rgba(255, 255, 255, .5)
+        }
+        .icon-calendar-alt {
+            height: 26px;
+            line-height: 26px;
+            border: 1px solid rgba(255, 255, 255, .5);
+            border-radius: 4px;
+            padding: 0 5px;
+            .calendar-alt {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &.todo-expand {
+        min-height: 145px;
+        height:auto;
+        padding-top: 20px;
+        padding-right: 20px;
+        .todo-control {
+            margin-top: 30px;
+        }
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            line-height: 1;
+            margin-bottom: 8px;
+            .create-time {
+                color: rgba(255, 255, 255, .5)
+            }
+            .icon-chevron-up {
+                padding: 0 10px;
+                cursor: pointer;
+            }
+        }
+        .todo-content {
+            line-height: 1.75;
+            .content {
+                border-bottom: 1px solid rgba(0, 0, 0, .2);
+                padding-bottom: 8px;
+            }
+        }
+        .other {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+
+            > div {
+                min-width: 32px;
+                height: 32px;
+                line-height: 30px;
+                padding: 0 8px;
+                border: 1px solid rgba(0, 0, 0, .2);
+                border-radius: 6px;
+                white-space: nowrap;
+                .attach-group, .remind {
+                    &:before {
+                        content: '';
+                        border-left: 1px solid rgba(0, 0, 0, .2);
+                        margin-right: 15px;
+                    }
+                    margin-left: 15px;
+                }
+                .attach-group {
+                    display: inline-block;
+                    height: 30px;
+                }
+                .attach-item {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 24px;
+                    height: 24px;
+                    border: 1px solid transparent;
+                    border-radius: 4px;
+                    line-height: 1;
+                    vertical-align: text-top;
+                    &:not(:last-of-type) {
+                        margin-right: 10px;
+                    }
+                    img {
+                        max-width: 20px;
+                        max-height: 20px;
+                    }
+                    &.active {
+                        border-color: rgba(255, 255, 255, .5);
+                        background: rgba(0, 0, 0, .2);
+                    }
+                }
+                .icon {
+                    color: rgba(255, 255, 255, .5);
+                }
+            }
+        }
+    }
 
     &:after {
         content: '';
         position: absolute;
-        top: 0px;
+        top: 0;
         left: 15px;
         height: 18px;
         width: calc(100% - 30px);
         border-radius: 9px;
         background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
-        // box-shadow: 0 0 0 5px rgba(255,255,255,0.1);
     }
 
-    .right-icon{
-        margin-right:20px;
+    &.active:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: -4px;
+        left: -4px;
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        border: 1px solid rgba(182, 182, 182, 1);
+        border-radius: 32px;
+        box-shadow: 0 0 10px rgba(182, 182, 182, 1);
     }
 
-    .icon-paperclip{
-        color:rgba(255,255,255,.5)
+}
+.todo-note {
+    border: 1px solid rgba(85, 121, 226, 1);
+    background: linear-gradient(rgba(105, 140, 231, 1), rgba(117, 153, 235, 1));
+}
+.todo-important {
+    border: 1px solid rgba(238, 85, 85, 1);
+    background: linear-gradient(rgba(241, 96, 96, 1), rgba(244, 117, 117, 1));
+}
+.todo-today {
+    border: 1px solid rgba(247, 138, 62, 1);
+    background: linear-gradient(rgba(248, 150, 73, 1), rgba(249, 169, 94, 1));
+}
+.todo-message {
+    border: 1px solid rgba(91, 186, 75, 1);
+    background: linear-gradient(rgba(84, 185, 67, 1), rgba(105, 199, 86, 1));
+}
+.todo-inspire {
+    border: 1px solid rgba(146, 88, 205, 1);
+    background: linear-gradient(rgba(159, 102, 212, 1), rgba(177, 124, 222, 1));
+}
+.todo-share {
+    border: 1px solid rgba(146, 146, 146, 1);
+    background: linear-gradient(rgba(159, 159, 159, 1), rgba(199, 199, 199, 1));
+}
+.todo-content {
+    flex: 1;
+    .content {
+        font-size: 20px;
     }
-    .icon-calendar-alt{
-        height:26px;
-        line-height: 26px;
-        border:1px solid rgba(255,255,255,.5);
-        border-radius: 4px;
-        padding: 0 5px;
-        .calendar-alt{
-            margin-right: 10px;
-        }
-    }
-    .todo-content {
-        flex: 1;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+    .checked {
+        text-decoration-line: line-through;
     }
 }
-
-.todo-expand{
-    height: auto;
-    line-height: 34px;
-    padding-top: 10px;
-    .todo-content {
-        flex: 1;
-        // overflow: hidden;
-        // white-space: nowrap;
-        // text-overflow: ellipsis;
-    }
-}
-
-.todo-content.checked{
-    text-decoration-line: line-through;
-}
-
 .todo-control {
     margin: 0 20px;
 
@@ -84,11 +197,11 @@
         position: relative;
     }
 
-    .input-checkbox~.icon-checkbox .icon-check {
+    .input-checkbox ~ .icon-checkbox .icon-check {
         display: none;
     }
 
-    .input-checkbox:checked~.icon-checkbox .icon-check {
+    .input-checkbox:checked ~ .icon-checkbox .icon-check {
         display: block;
         position: absolute;
         bottom: 0;
