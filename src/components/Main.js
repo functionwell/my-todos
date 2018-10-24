@@ -4,6 +4,7 @@ import './Main.scss'
 import Header from './Header'
 import Footer from './Footer'
 import TodoList from './TodoList'
+// import Plain from 'slate-plain-serializer'
 
 export default class RightCont extends Component {
     state = {
@@ -17,7 +18,7 @@ export default class RightCont extends Component {
             isDeleted: false,
             content: "Todo component test",
             attachment: [],
-            remindSettings: {},
+            remindSettings: null,
         }, {
             id: 1,
             isExpand: true,
@@ -26,9 +27,9 @@ export default class RightCont extends Component {
             isChecked: false,
             createTime: '2018年9月9日 18:09',
             isDeleted: false,
-            content: "重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123",
+            content: "重要事项123重要事项123重要事项123重要事项123重要事项123重重要事项123重要事项123重要事项123重要事项123重要事项123重重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123",
             attachment: [{src: './media/2018.jpg'}, {src: './media/002.jpg'}],
-            remindSettings: {},
+            remindSettings: null,
         }, {
             id: 2,
             isExpand: true,
@@ -39,7 +40,7 @@ export default class RightCont extends Component {
             isDeleted: false,
             content: "重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123重要事项123",
             attachment: [{src: './media/2018.jpg'}, {src: './media/002.jpg'}],
-            remindSettings: {},
+            remindSettings: null,
         }, {
             id: 3,
             isExpand: true,
@@ -74,6 +75,22 @@ export default class RightCont extends Component {
             attachment: [{src: './media/2018.jpg'}, {src: './media/002.jpg'}],
             remindSettings: {},
         },]
+    }
+
+    checkTodo = (e, id) => {
+        const item = this.state.todos.find(item => item.id === id);
+        item.isChecked = !item.isChecked;
+        this.setState({
+            todos: this.state.todos
+        });
+    }
+
+    editTodo = (e, id) => {
+        const item = this.state.todos.find(item => item.id === id);
+        item.content = e.target.value;
+        this.setState({
+            todos: this.state.todos
+        });
     }
 
     activeTodo = (e, id) => {
@@ -115,8 +132,12 @@ export default class RightCont extends Component {
         return (
             <React.Fragment>
                 <Header/>
-                <TodoList todos={this.state.todos} shrinkTodo={this.shrinkTodo}
-                          expandTodo={this.expandTodo} activeTodo={this.activeTodo}/>
+                <TodoList todos={this.state.todos}
+                          shrinkTodo={this.shrinkTodo}
+                          expandTodo={this.expandTodo}
+                          activeTodo={this.activeTodo}
+                          editTodo={this.editTodo}
+                          checkTodo={this.checkTodo}/>
                 <Footer/>
             </React.Fragment>
         );

@@ -9,119 +9,6 @@
     position: relative;
     user-select: none;
 
-    &.todo-shrink {
-        align-items: center;
-        height: 56px;
-        line-height: 56px;
-        .todo-content {
-            margin-right: 20px;
-            overflow: hidden;
-            .content {
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-            }
-        }
-        .right-icon {
-            margin-right: 20px;
-        }
-        .icon-paperclip {
-            color: rgba(255, 255, 255, .5)
-        }
-        .icon-calendar-alt {
-            height: 26px;
-            line-height: 26px;
-            border: 1px solid rgba(255, 255, 255, .5);
-            border-radius: 4px;
-            padding: 0 5px;
-            .calendar-alt {
-                margin-right: 10px;
-            }
-        }
-    }
-
-    &.todo-expand {
-        min-height: 145px;
-        height:auto;
-        padding-top: 20px;
-        padding-right: 20px;
-        .todo-control {
-            margin-top: 30px;
-        }
-        .content-header {
-            display: flex;
-            justify-content: space-between;
-            line-height: 1;
-            margin-bottom: 8px;
-            .create-time {
-                color: rgba(255, 255, 255, .5)
-            }
-            .icon-chevron-up {
-                padding: 0 10px;
-                cursor: pointer;
-            }
-        }
-        .todo-content {
-            line-height: 1.75;
-            .content {
-                border-bottom: 1px solid rgba(0, 0, 0, .2);
-                padding-bottom: 8px;
-            }
-        }
-        .other {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-
-            > div {
-                min-width: 32px;
-                height: 32px;
-                line-height: 30px;
-                padding: 0 8px;
-                border: 1px solid rgba(0, 0, 0, .2);
-                border-radius: 6px;
-                white-space: nowrap;
-                .attach-group, .remind {
-                    &:before {
-                        content: '';
-                        border-left: 1px solid rgba(0, 0, 0, .2);
-                        margin-right: 15px;
-                    }
-                    margin-left: 15px;
-                }
-                .attach-group {
-                    display: inline-block;
-                    height: 30px;
-                }
-                .attach-item {
-                    display: inline-flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 24px;
-                    height: 24px;
-                    border: 1px solid transparent;
-                    border-radius: 4px;
-                    line-height: 1;
-                    vertical-align: text-top;
-                    &:not(:last-of-type) {
-                        margin-right: 10px;
-                    }
-                    img {
-                        max-width: 20px;
-                        max-height: 20px;
-                    }
-                    &.active {
-                        border-color: rgba(255, 255, 255, .5);
-                        background: rgba(0, 0, 0, .2);
-                    }
-                }
-                .icon {
-                    color: rgba(255, 255, 255, .5);
-                }
-            }
-        }
-    }
-
     &:after {
         content: '';
         position: absolute;
@@ -207,5 +94,36 @@
         bottom: 0;
         left: 1px;
         color: #fff;
+    }
+}
+
+.todo.todo-shrink {
+    align-items: center;
+    height: 56px;
+    line-height: 56px;
+    .todo-content {
+        margin-right: 20px;
+        overflow: hidden;
+        .content {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+    .right-icon {
+        margin-right: 20px;
+    }
+    .icon-paperclip {
+        color: rgba(255, 255, 255, .5)
+    }
+    .icon-calendar-alt {
+        height: 26px;
+        line-height: 26px;
+        border: 1px solid rgba(255, 255, 255, .5);
+        border-radius: 4px;
+        padding: 0 5px;
+        .calendar-alt {
+            margin-right: 10px;
+        }
     }
 }
