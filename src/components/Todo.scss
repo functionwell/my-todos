@@ -19,15 +19,14 @@
         border-radius: 9px;
         background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
     }
-
     &.active:before {
         content: '';
         position: absolute;
         z-index: -1;
-        top: -4px;
-        left: -4px;
-        width: calc(100% + 8px);
-        height: calc(100% + 8px);
+        top: -6px;
+        left: -6px;
+        width: calc(100% + 12px);
+        height: calc(100% + 12px);
         border: 1px solid rgba(182, 182, 182, 1);
         border-radius: 32px;
         box-shadow: 0 0 10px rgba(182, 182, 182, 1);

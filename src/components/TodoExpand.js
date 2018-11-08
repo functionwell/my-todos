@@ -6,10 +6,12 @@ import classNames from 'classnames'
 // import {Editor} from 'slate-react'
 // import Plain from 'slate-plain-serializer'
 
+const types = ['note', 'important', 'today', 'message', 'inspire', 'share'];
+
 export default class TodoExpand extends Component {
     constructor(props) {
         super(props);
-
+        // 用来计算textarea高度
         this.txtRef = React.createRef();
     }
 
@@ -37,6 +39,18 @@ export default class TodoExpand extends Component {
                 })} onClick={e => {
                     this.props.activeTodo(e, this.props.id);
                 }}>
+                    {this.props.active &&
+                    <ul className="todo-types list-inline">
+                        {types.map((type,index) => (
+                            <li className={classNames({
+                                'list-inline-item':true,
+                                'todo-type': true,
+                                [type]: true,
+                                'active': type === this.props.type
+                            })} key={index}>
+                            </li>
+                        ))}
+                    </ul>}
                     <label className="todo-control" onClick={e => e.stopPropagation()}>
                         <input type="checkbox" className="input-checkbox"
                                onChange={e => this.props.checkTodo(e, id)}
@@ -73,7 +87,7 @@ export default class TodoExpand extends Component {
                                       onChange={e => {
                                           this.props.editTodo(e, this.props.id);
                                       }}
-                                      // onInput={e => this.txtRef.current.rows = this.calcRows()}
+                                // onInput={e => this.txtRef.current.rows = this.calcRows()}
                                       value={this.props.content}/>
 
                             {/* contentEditable 光标位置跳到最前 */}
